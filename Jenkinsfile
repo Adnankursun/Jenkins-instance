@@ -68,15 +68,7 @@ def slavePodTemplate = """
          }
         }
 
-        stage("Generate Variables") {
-          dir('deployments/terraform') {
-
-            println("Ami Variables")
-            def dev_tfvars = 
-            ami ${aws_region} =
-          }
-        }
-
+        
         container("buildtools") {
             dir('deployments/terraform'){
                 withCredentials([usernamePassword(credentialsId: "aws-access-${environment}", 
