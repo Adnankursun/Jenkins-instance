@@ -1,3 +1,4 @@
+# environment = "dev"
 s3_bucket = "jenkins-adnan"
 s3_folder_project = "jenkins"
 s3_folder_region = "eu-west-1"
