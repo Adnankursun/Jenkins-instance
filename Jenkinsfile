@@ -68,14 +68,20 @@ def slavePodTemplate = """
          }
         }
 
+        stage("Generate Variables") {
+          dir('deployments/terraform') {
 
-        
+            println("Ami Variables")
+            def dev_tfvars = 
+            ami ${aws_region} =
+          }
+        }
 
         container("buildtools") {
             dir('deployments/terraform'){
-                withCredentials([usernamePassword(credentialsId: 'packer-build-creds', 
+                withCredentials([usernamePassword(credentialsId: "aws-access-${environment}", 
                     passwordVariable: 'AWS_SECRET_ACCESS_KEY', usernameVariable: 'AWS_ACCESS_KEY_ID')]) {
-                      println("Selected cred is: aws-access-${environment}")
+                    println("Selected cred is: aws-access-${environment}")
                     stage("Terraform Apply/plan") {
                         if(!params.terraformDestroy) {            
                            if(params.terraformApply) {
