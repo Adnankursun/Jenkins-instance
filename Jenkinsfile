@@ -67,7 +67,8 @@ def slavePodTemplate = """
             sh 'cat deployment_configuration.tfvars >> dev.tfvars'
             sh 'cat ls -l'
             sh 'cat df -h'
-            sh 'cat pwd'
+            sh 'cat pwdgit status'
+            sh 'cat test branch'
          }
         }
 
