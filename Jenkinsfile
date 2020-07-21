@@ -67,6 +67,7 @@ def slavePodTemplate = """
             sh 'cat deployment_configuration.tfvars >> dev.tfvars'
             sh 'cat ls -l'
             sh 'cat df -h'
+            sh 'cat mac branch'
          }
         }
 
