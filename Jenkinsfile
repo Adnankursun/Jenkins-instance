@@ -65,6 +65,7 @@ def slavePodTemplate = """
             """.stripIndent()
             writeFile file: 'deployment_configuration.tfvars', text: "${deployment_configuration_tfvars}"
             sh 'cat deployment_configuration.tfvars >> dev.tfvars'
+            sh 'cat ls -l'
          }
         }
 
