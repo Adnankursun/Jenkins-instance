@@ -1,15 +1,12 @@
 provider "aws" {}
 
 resource "aws_instance" "jenkins" {
- 
- ami           = "ami-0346ee471bb2c892a " # eu-west-1"
- # ami           = "ami-0ba960472fc891755" # us-east-1"
- # ami           = "ami-0841302c04aa480c1" # us-west-1"
-
-    
+  ami           = "${var.ami}"
   instance_type = "t2.micro"
-
+  # key_name      = "${aws_key_pair.jenkins_key.key_name}"
   tags = {
-    Name = "Jenkins"
+    Name = "${var.Name}"
   }
 }
+variable "ami" {}
+variable "Name" {}
