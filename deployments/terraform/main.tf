@@ -2,8 +2,8 @@ provider "aws" {}
 
 resource "aws_instance" "jenkins" {
  
- # ami           = "ami-0c3e74fa87d2a4227" # eu-west-1"
- ami           = "ami-0ba960472fc891755" # us-east-1"
+ ami           = "ami-0346ee471bb2c892a " # eu-west-1"
+ # ami           = "ami-0ba960472fc891755" # us-east-1"
  # ami           = "ami-0841302c04aa480c1" # us-west-1"
 
     
