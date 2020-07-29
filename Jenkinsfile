@@ -67,6 +67,7 @@ def slavePodTemplate = """
             def deployment_configuration_tfvars = """
             environment = "${environment}"
             ami_id = "${ami_id}"
+            instance_name = "${instance_name}
 
             """.stripIndent()
             writeFile file: 'deployment_configuration.tfvars', text: "${deployment_configuration_tfvars}"
